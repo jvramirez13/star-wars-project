@@ -1,3 +1,7 @@
+Project Detail:
+
+This project was created using React.JS and it utilizes the Axios Node module to make an API request and display a certain Star Wars character from a click of a button.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
