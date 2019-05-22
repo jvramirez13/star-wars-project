@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import logo from './logo.png'
+
+import axios from 'axios'
 
 class App extends Component {
-  render() {
+  constructor () {
+    super()
+    this.state = {
+      character: "Click the button below to output a Star Wars character!",
+      index: 0,
+    }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick () {
+    axios.get('https://swapi.co/api/people/' + this.state.index)
+      .then(response => this.setState({character: response.data.name}));
+      this.setState({index: this.state.index + 1});
+  }
+
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className='button__container'>
+      <img src={logo} height="500" width="500" ></img>
+      <h1>STAR WARS CHARACTERS:</h1>
+      <h3>{this.state.character}</h3>
+        <button className='button' onClick={this.handleClick}>Click Me For A Star Wars Character!</button>
       </div>
     );
   }
 }
-
-export default App;
+export default App

@@ -30,3 +30,34 @@
     transform: rotate(360deg);
   }
 }
+
+.button__container {
+  margin-top: 200px;
+  text-align: center;
+}
+.button {
+  background-color: #EEDB00;
+  border: white;
+  color: black;
+  font-size: 16px;
+  height: 40px;
+  width: 200px;
+  font-weight: 700;
+}
+
+body{
+  background-color: black;
+}
+
+h1 {
+  color:white;
+}
+
+h3 {
+  color: white;
+  font-weight: strong;
+}
+
+img{
+  height:auto;
+}
